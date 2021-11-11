@@ -10,6 +10,8 @@ import Home from './components/Home/Home/Home';
 import About from './components/About/About';
 import Navigation from './components/Shared/Navigation/Navigation';
 import Footer from './components/Shared/Footer/Footer';
+import NotFound from './components/NotFound/NotFound';
+import Cameras from './components/Home/Cameras/Cameras';
 
 
 function App() {
@@ -23,9 +25,9 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          {/* <PrivateRoute path="/spots">
-              <Spots></Spots>
-            </PrivateRoute> */}
+          <Route path="/cameras">
+            <Cameras></Cameras>
+          </Route>
           {/* <PrivateRoute path="/guides">
               <Guides></Guides>
             </PrivateRoute> */}
@@ -60,9 +62,9 @@ function App() {
             <Route path="/articledetail">
               <ArticleDetail></ArticleDetail>
             </Route> */}
-          {/* <Route path="*">
-              <NotFound></NotFound>
-            </Route> */}
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
         </Switch>
       </Router>
     </div>
