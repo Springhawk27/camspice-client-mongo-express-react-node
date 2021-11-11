@@ -12,6 +12,7 @@ import Navigation from './components/Shared/Navigation/Navigation';
 import Footer from './components/Shared/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
 import Cameras from './components/Home/Cameras/Cameras';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
           {/* <Route path="/booking/:spotId">
               <Booking></Booking>
             </Route> */}
+          <Route path="/dashboard">
+            <Dashboard></Dashboard>
+          </Route>
           {/* <PrivateRoute path="/addSpots">
               <AddSpot></AddSpot>
             </PrivateRoute>

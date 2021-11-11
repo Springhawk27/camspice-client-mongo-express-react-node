@@ -28,7 +28,13 @@ const Navigation = () => {
                         to="/cameras"
                         className="mr-5 hover:text-green-700">Cameras</NavLink>
                     <a href="/#" className="mr-5 hover:text-black">Accessories</a>
-                    <a href="/#" className="mr-5 hover:text-black">Dashboard</a>
+                    <NavLink
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "#48BB78"
+                        }}
+                        to="/dashboard"
+                        className="mr-5 hover:text-green-700">Dashboard</NavLink>
 
                 </nav>
                 <button className="inline-flex items-center bg-red-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Logout

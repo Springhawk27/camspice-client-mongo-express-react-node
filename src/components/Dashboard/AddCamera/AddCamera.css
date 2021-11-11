@@ -1,0 +1,16 @@
+.add__camera form {
+    display: flex;
+    flex-direction: column;
+    /* width: 40%; */
+    justify-content: center;
+    align-items: center;
+}
+
+.add__camera form input,textarea {
+    width: 40%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid rgb(94, 206, 250);
+    border-radius: 7px;
+    background-color: #e8f7fc;
+}
