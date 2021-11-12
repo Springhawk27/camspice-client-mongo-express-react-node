@@ -1,4 +1,4 @@
-.add__camera form {
+.add__accessory form {
     display: flex;
     flex-direction: column;
     /* width: 40%; */
@@ -6,15 +6,11 @@
     align-items: center;
 }
 
-.add__camera form input {
+.add__accessory form input,textarea {
     width: 40%;
     margin-bottom: 10px;
     padding: 5px;
     border: 1px solid rgb(94, 206, 250);
     border-radius: 7px;
-    background-color: #e8f7fc;
-}
-.add__camera form  textarea{
-    background-color: #e8f7fc;
-
+    background-color: #e8edfc;
 }

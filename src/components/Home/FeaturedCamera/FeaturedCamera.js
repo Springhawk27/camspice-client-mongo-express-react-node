@@ -16,7 +16,7 @@ const FeaturedCameras = () => {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 pt-12 mx-auto">
                     <div className="flex flex-col text-center w-full mb-1 ">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-1 text-green-700">We have the below places for your next picnic and many more</h1>
+                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-1 text-blue-500 bg-blue-50 p-2">Check out our featured Action Camera</h1>
                     </div>
                 </div>
             </section>

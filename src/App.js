@@ -13,6 +13,7 @@ import Footer from './components/Shared/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
 import Cameras from './components/Home/Cameras/Cameras';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import Accessories from './components/Home/Accessories/Accessories';
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/cameras">
             <Cameras></Cameras>
+          </Route>
+          <Route path="/accessories">
+            <Accessories></Accessories>
           </Route>
           {/* <PrivateRoute path="/guides">
               <Guides></Guides>

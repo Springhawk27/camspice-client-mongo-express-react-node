@@ -1,34 +1,32 @@
 import React from 'react';
 import axios from 'axios';
-import './AddCamera.css';
+import './AddAccessory.css';
 import { useForm } from "react-hook-form";
 
 
-const AddCamera = () => {
+const AddAccessory = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:5000/products', data)
+        axios.post('http://localhost:5000/accessories', data)
             .then(res => {
                 // console.log(res);
                 if (res.data.insertedId) {
-                    alert('added successfully');
+                    alert('Accessory added successfully');
                     reset();
                 }
             })
     };
     return (
-        <div className="add__camera ">
-            <h2 className="bg-blue-300 py-2 text-blue-700 font-bold mb-4">Add a New Camera Detail here</h2>
+        <div className="add__accessory ">
+            <h2 className="bg-blue-300 py-2 text-blue-700 font-bold mb-4">Add a New Accessory here</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name", { required: true, maxLength: 150 })} placeholder="name" />
                 <input {...register("model", { required: true, maxLength: 100 })} placeholder="model" />
-                <input {...register("brand", { required: true, maxLength: 100 })} placeholder="brand" />
-                <input {...register("image", { required: true, maxLength: 100 })} placeholder="photo quality" />
-                <input {...register("video", { required: true, maxLength: 100 })} placeholder="video quality" />
+                <input {...register("brand", { required: true, maxLength: 50 })} placeholder="brand" />
                 <textarea {...register("description")} placeholder="description" />
                 <input type="number" {...register("price")} placeholder="price" />
-                <input {...register("img")} placeholder="put your img url" />
+                <input {...register("img")} placeholder="put your img url here" />
                 <input type="submit" />
 
             </form>
@@ -36,4 +34,4 @@ const AddCamera = () => {
     );
 };
 
-export default AddCamera;
+export default AddAccessory;

@@ -6,7 +6,8 @@ import { useState } from "react"
 const useCameras = () => {
     const [cameras, setCameras] = useState([]);
     useEffect(() => {
-        fetch('https://scary-demon-31223.herokuapp.com/picnicSpots')
+        // fetch('https://scary-demon-31223.herokuapp.com/picnicSpots')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setCameras(data))
     }, [])

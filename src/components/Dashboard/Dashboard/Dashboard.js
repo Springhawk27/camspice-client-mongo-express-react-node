@@ -11,6 +11,7 @@ import {
     useRouteMatch
 } from "react-router-dom";
 import AddCamera from '../AddCamera/AddCamera';
+import AddAccessory from '../AddAccessory/AddAccessory';
 
 
 const Dashboard = () => {
@@ -48,24 +49,35 @@ const Dashboard = () => {
                 <aside className="w-80 h-screen bg-gray shadow-md w-fulll hidden sm:block">
                     <div className="flex flex-col justify-between h-screen p-4 bg-gray-800">
                         <div className="text-sm text-left">
-                            <Link
-                                style={{ textDecoration: 'none' }}
-                                to={`${url}/addcamera`}
 
-                            ><button color="inherit">Add Camera</button>
-                            </Link>
                             {/* <Link
                                 style={{ textDecoration: 'none', color: 'black', }}
                                 to={`${url}/addDoctor`}
                             ><Button color="inherit">Add Doctor</Button>
                             </Link> */}
                             <div className="bg-gray-900 text-white p-2 rounded cursor-pointer">
-                                <Link
+                                <NavLink
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "#48BB78"
+                                    }}
                                     style={{ textDecoration: 'none' }}
                                     to={`${url}/addcamera`}
 
-                                ><button color="inherit">Add Camera</button>
-                                </Link>
+                                ><button color="inherit">Add Product</button>
+                                </NavLink>
+                            </div>
+                            <div className="bg-gray-900 text-white p-2 rounded cursor-pointer">
+                                <NavLink
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "#48BB78"
+                                    }}
+                                    style={{ textDecoration: 'none' }}
+                                    to={`${url}/addaccessory`}
+
+                                ><button color="inherit">Add Accessory</button>
+                                </NavLink>
                             </div>
                             <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Backlog</div>
                             <div className="bg-gray-700 text-blue-300 p-2 rounded mt-2 cursor-pointer">Board</div>
@@ -93,6 +105,9 @@ const Dashboard = () => {
                     </Route> */}
                             <Route path={`${path}/addcamera`}>
                                 <AddCamera></AddCamera>
+                            </Route>
+                            <Route path={`${path}/addaccessory`}>
+                                <AddAccessory></AddAccessory>
                             </Route>
                             {/* <AdminRoute path={`${path}/addDoctor`}>
                         <AddDoctor></AddDoctor>
