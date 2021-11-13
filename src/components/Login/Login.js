@@ -37,20 +37,20 @@ const Login = () => {
     return (
         <>
             <Navigation></Navigation>
-            <div className=" container mx-auto px-5 py-8 flex items-center  justify-center flex-col ">
-                <form className='container mt-5 object-center w-1/3  text-left' onSubmit={handleLoginSubmit}>
-                    <h3 className="text-green-700 font-bold text-xl">  Sign in to your account</h3>
+            <div className=" container mx-auto px-5 py-8 flex items-center  justify-center flex-col  ">
+                <form className='container mt-5 object-center w-1/3  text-left ' onSubmit={handleLoginSubmit}>
+                    <h3 className="text-blue-400 underline font-bold text-xl mb-2">  Sign in to your account</h3>
 
                     <div className="row mb-3">
                         <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
                         <div className="col-sm-10">
-                            <input onBlur={handleOnChange} type="email" className="border-1 border-green-300 w-full rounded" id="inputEmail3" required placeholder="type your email" />
+                            <input onBlur={handleOnChange} name="email" type="email" className="border-2 border-blue-300 w-full rounded p-2" id="inputEmail3" required placeholder="type your email" />
                         </div>
                     </div>
                     <div className="row mb-3">
                         <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
                         <div className="col-sm-10">
-                            <input onBlur={handleOnChange} type="password" className="border-1 border-green-300 w-full rounded" id="inputPassword3" required placeholder="type your password" />
+                            <input onBlur={handleOnChange} name="password" type="password" className="border-2 border-blue-300 w-full rounded p-2" id="inputPassword3" required placeholder="type your password" />
                         </div>
                     </div>
 
@@ -59,16 +59,18 @@ const Login = () => {
                         <div className="col-sm-10 offset-sm-2">
                             <div className="form-check">
                                 <NavLink
+                                    className="text-blue-500 "
                                     style={{ textDecoration: "none" }}
                                     to="/register">
                                     <button
+                                        className="font-bold"
                                         variant="text">New User? Please Register</button>
 
                                 </NavLink>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" className="bg-green-200 my-2 px-4 py-2">Sign in</button>
+                    <button type="submit" className="bg-green-200 my-2 px-6 py-2 rounded">Sign in</button>
                     <br />
                     {isLoading && <Spinner></Spinner>}
                     {user?.email && <p severity="success">Logged In successfully</p>
@@ -81,7 +83,7 @@ const Login = () => {
                 </form>
                 <div>Or</div>
                 <div>
-                    <button onClick={handleGoogleSignIn} className="bg-yellow-300 px-3 py-2 my-2">Google Sign In</button>
+                    <button onClick={handleGoogleSignIn} className="bg-yellow-300 px-3 py-2 my-2 rounded">Google Sign In</button>
 
                 </div>
 

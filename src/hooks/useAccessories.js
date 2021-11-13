@@ -6,7 +6,7 @@ import { useState } from "react"
 const useAccessories = () => {
     const [accessories, setAccessories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/accessories')
+        fetch('https://mysterious-refuge-82973.herokuapp.com/accessories')
             .then(res => res.json())
             .then(data => setAccessories(data))
     }, [])

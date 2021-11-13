@@ -7,7 +7,7 @@ const useCameras = () => {
     const [cameras, setCameras] = useState([]);
     useEffect(() => {
         // fetch('https://scary-demon-31223.herokuapp.com/picnicSpots')
-        fetch('http://localhost:5000/products')
+        fetch('https://mysterious-refuge-82973.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setCameras(data))
     }, [])

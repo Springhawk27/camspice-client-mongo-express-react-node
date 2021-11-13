@@ -13,8 +13,8 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
 
     // new
-    // const [admin, setAdmin] = useState(false);
-    // const [token, setToken] = useState('');
+    const [admin, setAdmin] = useState(false);
+    const [token, setToken] = useState('');
 
     const auth = getAuth();
 
@@ -35,7 +35,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name }
                 setUser(newUser);
                 // ave user to database
-                // saveUser(email, name, 'POST');
+                saveUser(email, name, 'POST');
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -96,7 +96,7 @@ const useFirebase = () => {
                 const user = result.user;
                 // ...
 
-                // saveUser(user.email, user.displayName, 'PUT');
+                saveUser(user.email, user.displayName, 'PUT');
 
                 setAuthError('');
                 const destination = location?.state?.from || '/'
@@ -143,11 +143,11 @@ const useFirebase = () => {
 
                 // const uid = user.uid;
                 setUser(user);
-                // getIdToken(user)
-                //     .then(idToken => {
-                //         // console.log(idToken);
-                //         setToken(idToken);
-                //     })
+                getIdToken(user)
+                    .then(idToken => {
+                        // console.log(idToken);
+                        setToken(idToken);
+                    })
             } else {
                 setUser({});
             }
@@ -157,11 +157,11 @@ const useFirebase = () => {
     }, [auth])
 
     // new
-    // useEffect(() => {
-    //     fetch(`https://hidden-scrubland-58450.herokuapp.com/users/${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setAdmin(data.admin))
-    // }, [user.email])
+    useEffect(() => {
+        fetch(`https://mysterious-refuge-82973.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
 
 
 
@@ -176,22 +176,22 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     };
 
-    // const saveUser = (email, displayName, method) => {
-    //     const user = { email, displayName };
-    //     fetch('https://hidden-scrubland-58450.herokuapp.com/users', {
-    //         method: method,
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //         .then()
-    // }
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('https://mysterious-refuge-82973.herokuapp.com/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
 
     return {
         user,
-        // admin,
-        // token,
+        admin,
+        token,
         isLoading,
         authError,
         registerUser,

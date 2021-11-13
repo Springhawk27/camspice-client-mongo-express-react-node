@@ -8,7 +8,7 @@ const AddAccessory = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:5000/accessories', data)
+        axios.post('https://mysterious-refuge-82973.herokuapp.com/accessories', data)
             .then(res => {
                 // console.log(res);
                 if (res.data.insertedId) {

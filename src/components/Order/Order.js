@@ -17,7 +17,7 @@ const Order = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://mysterious-refuge-82973.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -28,12 +28,12 @@ const Order = () => {
         data.orderId = id;
         data.productName = product?.name;
         data.productPrice = product?.price;
-        // data.productModel = product?.model;
-        // data.productBrand = product?.brand;
+        data.productModel = product?.model;
+        data.productBrand = product?.brand;
         data.img = product?.img;
         data.status = "Pending";
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://mysterious-refuge-82973.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
