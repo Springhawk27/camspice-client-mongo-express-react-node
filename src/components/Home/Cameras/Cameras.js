@@ -24,7 +24,7 @@ const Cameras = (props) => {
                             {
                                 cameras.map(camera => <Camera
                                     key={camera.id}
-                                    spot={camera}
+                                    camera={camera}
                                 ></Camera>)
                             }
                         </div>

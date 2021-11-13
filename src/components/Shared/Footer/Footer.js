@@ -13,7 +13,7 @@ const Footer = () => {
 
                             <span style={{ color: '#4299E1' }} className="ml-3 text-lg ">CamSpice</span>
                         </NavLink>
-                        <p className="mt-2 text-sm text-gray-700">We are here to serve you and ensuring a cheerful, sound and beautiful journey ahead of you.</p>
+                        <p className="mt-2 text-sm text-gray-700">We are here to give you the best product with the best available price.</p>
                     </div>
                     <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
                         <div className="lg:w-2/3 md:w-1/3 w-full px-4">
@@ -32,17 +32,12 @@ const Footer = () => {
                             <h2 className="title-font font-medium text-green-600 tracking-widest text-sm mb-3">Quick Links</h2>
                             <nav className="list-none mb-2">
                                 <li>
-                                    <NavLink to="/spots" className="text-gray-600 hover:text-green-500">Camera</NavLink>
+                                    <NavLink to="/cameras" className="text-gray-600 hover:text-green-500">Camera</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/guides" className="text-gray-600 hover:text-green-500">Accessories</NavLink>
+                                    <NavLink to="/accessories" className="text-gray-600 hover:text-green-500">Accessories</NavLink>
                                 </li>
-                                <li>
-                                    <NavLink to="/about" className="text-gray-600 hover:text-green-500">About Us</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/contact" className="text-gray-600 hover:text-green-500">Contact</NavLink>
-                                </li>
+
 
                             </nav>
                         </div>

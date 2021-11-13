@@ -27,7 +27,7 @@ const FeaturedCameras = () => {
                             {
                                 cameras.slice(0, 6).map(camera => <Camera
                                     key={camera._id}
-                                    spot={camera}
+                                    camera={camera}
 
                                 ></Camera>)
                             }

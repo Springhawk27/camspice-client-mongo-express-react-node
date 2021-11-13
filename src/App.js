@@ -14,39 +14,46 @@ import NotFound from './components/NotFound/NotFound';
 import Cameras from './components/Home/Cameras/Cameras';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Accessories from './components/Home/Accessories/Accessories';
+import Login from './components/Login/Login';
+import AuthProvider from './contexts/AuthProvider';
+import Register from './components/Register/Register';
+import Order from './components/Order/Order';
+
 
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/cameras">
-            <Cameras></Cameras>
-          </Route>
-          <Route path="/accessories">
-            <Accessories></Accessories>
-          </Route>
-          {/* <PrivateRoute path="/guides">
+      <AuthProvider>
+
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/cameras">
+              <Cameras></Cameras>
+            </Route>
+            <Route path="/accessories">
+              <Accessories></Accessories>
+            </Route>
+            {/* <PrivateRoute path="/guides">
               <Guides></Guides>
             </PrivateRoute> */}
-          {/* <Route path="/articledetail">
+            {/* <Route path="/articledetail">
               <ArticleDetail></ArticleDetail>
             </Route> */}
 
-          {/* <Route path="/booking/:spotId">
-              <Booking></Booking>
-            </Route> */}
-          <Route path="/dashboard">
-            <Dashboard></Dashboard>
-          </Route>
-          {/* <PrivateRoute path="/addSpots">
+            <Route path="/orders/:productId">
+              <Order></Order>
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
+            {/* <PrivateRoute path="/addSpots">
               <AddSpot></AddSpot>
             </PrivateRoute>
             <PrivateRoute path="/manageSpots">
@@ -58,23 +65,28 @@ function App() {
             <PrivateRoute path="/manageAllBooking">
               <ManageAllBookings></ManageAllBookings>
             </PrivateRoute> */}
-          <Route path="/about">
-            <About></About>
-          </Route>
-          {/* <Route path="/contact">
+            <Route path="/about">
+              <About></About>
+            </Route>
+            {/* <Route path="/contact">
               <Contact></Contact>
             </Route> */}
-          {/* <Route path="/login">
+            <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/articledetail">
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+            {/* <Route path="/articledetail">
               <ArticleDetail></ArticleDetail>
             </Route> */}
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-      </Router>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+        </Router>
+      </AuthProvider>
+
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import action_camera from '../../../images/action_camera.png'
 import { NavLink } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
+import useAuth from './../../../hooks/useAuth';
 
 
 
 const Navigation = () => {
-    // const { user, logOut } = useAuth();
+    const { user, logout } = useAuth();
 
     return (
         <header style={{ backgroundColor: '#4299E1' }} className="text-white body-font ">
@@ -43,11 +43,19 @@ const Navigation = () => {
                         className="mr-5 hover:text-green-700">Dashboard</NavLink>
 
                 </nav>
-                <button className="inline-flex items-center bg-red-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Logout
-                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </button>
+
+                {user?.email ?
+
+
+                    <button onClick={logout} variant="light" className="inline-flex items-center bg-green-400 border-0 py-1 px-3 focus:outline-none hover:bg-green-500 rounded text-white mt-4 md:mt-0">Logout
+                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </button> :
+                    <NavLink to="/login" className="inline-flex items-center bg-green-400 border-0 py-1 px-3 focus:outline-none hover:bg-green-500 rounded text-white mt-4 md:mt-0">Login
+
+                    </NavLink>
+                }
             </div>
         </header>
     );
