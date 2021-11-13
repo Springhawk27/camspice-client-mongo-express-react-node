@@ -69,7 +69,7 @@ const useFirebase = () => {
                 // Signed in 
                 // const user = userCredential.user;
                 // new
-                const destination = location?.state?.from || '/'
+                const destination = location?.state?.from || '/dashboard'
                 history.replace(destination);
                 setAuthError('');
 
@@ -99,7 +99,7 @@ const useFirebase = () => {
                 saveUser(user.email, user.displayName, 'PUT');
 
                 setAuthError('');
-                const destination = location?.state?.from || '/'
+                const destination = location?.state?.from || '/dashboard'
                 history.replace(destination);
 
             }).catch((error) => {

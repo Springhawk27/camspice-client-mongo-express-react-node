@@ -23,7 +23,7 @@ const FeaturedCameras = () => {
             <div>
                 <section className="text-gray-600 body-font">
                     <div className="container px-5 py-12 mx-auto">
-                        <NavLink to="/spots" className="flex flex-wrap -m-4">
+                        <div className="flex flex-wrap -m-4">
                             {
                                 cameras.slice(0, 6).map(camera => <Camera
                                     key={camera._id}
@@ -32,7 +32,7 @@ const FeaturedCameras = () => {
                                 ></Camera>)
                             }
 
-                        </NavLink>
+                        </div>
                     </div>
                 </section>
             </div>

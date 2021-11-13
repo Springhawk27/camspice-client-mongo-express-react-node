@@ -23,7 +23,7 @@ const Cameras = (props) => {
                         <div className="flex flex-wrap -m-4">
                             {
                                 cameras.map(camera => <Camera
-                                    key={camera.id}
+                                    key={camera._id}
                                     camera={camera}
                                 ></Camera>)
                             }

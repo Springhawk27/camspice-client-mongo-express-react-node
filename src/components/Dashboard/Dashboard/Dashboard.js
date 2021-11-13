@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, Button } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import action_camera from '../../../images/action_camera.png'
 
 import {
-    BrowserRouter as Router,
+
     Switch,
     Route,
-    Link,
-    useParams,
     useRouteMatch
 } from "react-router-dom";
 import AddCamera from '../AddCamera/AddCamera';
 import AddAccessory from '../AddAccessory/AddAccessory';
 import MyOrders from '../MyOrders/MyOrders';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
-import Order from '../../Order/Order';
 import useAuth from '../../../hooks/useAuth';
 import Payment from '../Payment/Payment';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../../AdminRoute/AdminRoute';
 import Profile from '../Profile/Profile';
+import Review from '../Review/Review';
 
 
 const Dashboard = () => {
@@ -27,7 +25,8 @@ const Dashboard = () => {
 
     const [orders, setOrders] = useState([]);
     const [allOrders, setAllOrders] = useState([]);
-    const { user, admin } = useAuth();
+    const { user, logout, admin } = useAuth();
+
 
 
 
@@ -43,7 +42,7 @@ const Dashboard = () => {
 
                 setOrders(myOrders);
             })
-    }, [orders])
+    }, [orders, user.email])
 
     useEffect(() => {
         fetch('https://mysterious-refuge-82973.herokuapp.com/orders')
@@ -54,9 +53,7 @@ const Dashboard = () => {
             })
     }, [allOrders])
 
-    // function classNames(...classes) {
-    //     return classes.filter(Boolean).join(' ')
-    // }
+
     return (
         <div>
 
@@ -89,11 +86,7 @@ const Dashboard = () => {
                     <div className="flex flex-col justify-between h-screen p-4 bg-gray-800">
                         <div className="text-sm text-left">
 
-                            {/* <Link
-                                style={{ textDecoration: 'none', color: 'black', }}
-                                to={`${url}/addDoctor`}
-                            ><Button color="inherit">Add Doctor</Button>
-                            </Link> */}
+
                             {admin && <div>
                                 <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">
                                     <NavLink
@@ -173,13 +166,26 @@ const Dashboard = () => {
                                 </NavLink>
 
                             </div>
+                            <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">
+                                <NavLink
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "#48BB78"
+                                    }}
+                                    style={{ textDecoration: 'none' }}
+                                    to={`${url}/review`}
+
+                                ><button color="inherit">Review</button>
+                                </NavLink>
+
+                            </div>
 
 
 
                         </div>
 
                         <div className="flex p-3 text-white bg-red-500 rounded cursor-pointer text-center text-sm">
-                            <button className="rounded inline-flex items-center">
+                            <button onClick={logout} className="rounded inline-flex items-center">
                                 <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clipRule="evenodd" /></svg>
                                 <span className="font-semibold">Logout</span>
                             </button>
@@ -190,12 +196,9 @@ const Dashboard = () => {
                 <section className="w-full p-4">
                     <div className="w-full h-100 border-solid border-2 p-4 text-md">
                         <Switch>
-                            {/* <Route exact path={path}>
-                        <DashboardHome></DashboardHome>
-                    </Route> */}
-                            <Route path={`${path}/profile`}>
-                                <Profile></Profile>
 
+                            <Route exact path={`${path}/profile`}>
+                                <Profile></Profile>
                             </Route>
                             <AdminRoute path={`${path}/makeadmin`}>
                                 <MakeAdmin></MakeAdmin>
@@ -215,9 +218,10 @@ const Dashboard = () => {
                             <Route path={`${path}/payment`}>
                                 <Payment></Payment>
                             </Route>
-                            {/* <AdminRoute path={`${path}/addDoctor`}>
-                        <AddDoctor></AddDoctor>
-                    </AdminRoute> */}
+                            <Route path={`${path}/review`}>
+                                <Review></Review>
+                            </Route>
+
                         </Switch>
                     </div>
                 </section>

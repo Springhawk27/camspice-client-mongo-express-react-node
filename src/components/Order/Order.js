@@ -64,12 +64,11 @@ const Order = () => {
                     <h2 className="text-blue-600 title-font text-lg font-medium">{product?.name}</h2>
                     <h2 className="text-grey-600 title-font text-lg ">Model: {product?.model}</h2>
                     <h2 className="text-grey-600 title-font text-lg ">Brand: {product?.brand}</h2>
+                    <h2 className="text-grey-600 title-font text-lg ">Photo: {product?.image}</h2>
+                    <h2 className="text-grey-600 title-font text-lg ">Video: {product?.video}</h2>
                     <p className="mt-1">Description: {product?.description}</p>
                     <p className="mt-1 text-red-700">Cost: {product?.price} taka</p>
-                    <NavLink to="/home" className="flex justify-start mt-2">
-                        < button className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
-                            Proceed to Checkout</button>
-                    </NavLink>
+
 
                 </div>
                 <div className="order__form">
