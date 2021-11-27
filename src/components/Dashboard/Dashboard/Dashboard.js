@@ -18,6 +18,7 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../../AdminRoute/AdminRoute';
 import Profile from '../Profile/Profile';
 import Review from '../Review/Review';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 
 const Dashboard = () => {
@@ -138,6 +139,19 @@ const Dashboard = () => {
                                     <span className="w-4 h-4 bg-blue-600 rounded-full text-white text-center font-normal text-xs">{allOrders.length}</span>
 
                                 </div>
+                                <div className="bg-gray-900 flex justify-between items-center text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">
+                                    <NavLink
+                                        activeStyle={{
+                                            fontWeight: "bold",
+                                            color: "#48BB78"
+                                        }}
+                                        style={{ textDecoration: 'none' }}
+                                        to={`${url}/manageproducts`}
+
+                                    ><button color="inherit">Manage All Products</button>
+                                    </NavLink>
+
+                                </div>
                             </div>}
                             <div className="bg-gray-900 flex justify-between items-center text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">
                                 <NavLink
@@ -211,6 +225,9 @@ const Dashboard = () => {
                             </AdminRoute>
                             <AdminRoute path={`${path}/manageallorders`}>
                                 <ManageAllOrders></ManageAllOrders>
+                            </AdminRoute>
+                            <AdminRoute path={`${path}/manageproducts`}>
+                                <ManageProducts></ManageProducts>
                             </AdminRoute>
                             <Route path={`${path}/myorders`}>
                                 <MyOrders></MyOrders>
