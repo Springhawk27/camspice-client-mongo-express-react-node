@@ -44,7 +44,7 @@ const Dashboard = () => {
     <div>
       <header
         // style={{ backgroundColor: '#4299E1' }}
-        className=" bg-blue-500 w-full  p-4 flex justify-between items-center"
+        className=" bg-blue-500 w-full  p-4 flex justify-between items-center fixed"
       >
         <nav className="flex items-center">
           <img className="w-7 h-7" src={action_camera} alt="action_camera" />
@@ -70,13 +70,13 @@ const Dashboard = () => {
         </div>
       </header>
 
-      <main className="flex w-full h-screen">
-        <aside className="w-80 h-screen bg-gray shadow-md w-fulll hidden sm:block">
-          <div className="flex flex-col justify-between h-screen p-4 bg-gray-800">
-            <div className="text-sm text-left">
+      <main className="flex w-full h-screen  pt-14">
+        <aside className=" w-80 h-screen bg-gray shadow-md w-fulll hidden sm:block">
+          <div className=" flex flex-col justify-between h-screen p-4 bg-gray-800">
+            <div className="text-sm text-left ">
               {admin && (
                 <div>
-                  <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">
+                  <div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300 ">
                     <NavLink
                       activeStyle={{
                         fontWeight: "bold",
@@ -205,7 +205,7 @@ const Dashboard = () => {
           </div>
         </aside>
 
-        <section className="w-full p-4">
+        <section className="w-full p-4 overflow-auto">
           <div className="w-full h-100 border-solid border-2 p-4 text-md">
             <Switch>
               <Route exact path={`${path}/profile`}>

@@ -121,9 +121,9 @@ const Order = () => {
               {...register("phone", { required: true })}
             />
 
-            {/* <input className="hover:cursor-pointer" type="submit" /> */}
+            {/* <input className="cursor-pointer" type="submit" /> */}
             <button
-              className=" text-white hover:cursor-pointer hover:bg-blue-600 bg-blue-500  py-2 px-8 rounded"
+              className=" text-white cursor-pointer hover:bg-blue-600 bg-blue-500  py-2 px-8 rounded"
               type="submit"
             >
               Submit

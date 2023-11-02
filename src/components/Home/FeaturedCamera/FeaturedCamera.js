@@ -9,7 +9,7 @@ const FeaturedCameras = () => {
   return (
     <div>
       <section className="text-gray-600 body-font ">
-        <div className="container px-5 pt-12 mx-auto ">
+        <div className="lg:container px-5 pt-12 mx-auto ">
           <div className="flex flex-col text-center w-full mb-1 ">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-1 text-blue-500 bg-blue-50 p-4 ">
               Discover our highlighted action camera
@@ -20,7 +20,7 @@ const FeaturedCameras = () => {
       </section>
       <div>
         <section className="text-gray-600 body-font">
-          <div className="container px-5 py-12 mx-auto">
+          <div className="lg:container px-5 py-12 mx-auto">
             <div className="flex flex-wrap m-4 ">
               {cameras?.slice(0, 6).map((camera) => (
                 <Camera key={camera._id} camera={camera}></Camera>

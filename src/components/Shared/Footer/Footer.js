@@ -70,9 +70,9 @@ const Footer = () => {
         </div>
         <div
           // style={{ backgroundColor: '#4299E1' }}
-          className=""
+          className=" bg-blue-500"
         >
-          <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row bg-blue-500">
+          <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row ">
             <p className="text-white text-sm text-center sm:text-left">
               © 2023 CamSpice by Sajjad Mahmud
             </p>
