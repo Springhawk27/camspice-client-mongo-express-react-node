@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import "./Order.css";
@@ -23,7 +22,7 @@ const Order = () => {
     fetch(`https://camspice-server.vercel.app/products/${productId}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
-  }, []);
+  }, [productId]);
 
   const onSubmit = (data) => {
     const id = productId;

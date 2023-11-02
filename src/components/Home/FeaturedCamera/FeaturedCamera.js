@@ -1,10 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import useCameras from "../../../hooks/useCameras";
 import Camera from "../Camera/Camera";
 
 const FeaturedCameras = () => {
-  const [cameras, setCameras] = useCameras([]);
+  const [cameras] = useCameras([]);
 
   return (
     <div>

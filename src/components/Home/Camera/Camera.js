@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Camera = (props) => {
-  const { _id, name, description, img, price } = props?.camera;
+  const { _id, name, img, price } = props?.camera;
 
   return (
     <div className="lg:w-1/3 md:w-1/2 p-4 w-full hover:shadow-xl shadow-md ">

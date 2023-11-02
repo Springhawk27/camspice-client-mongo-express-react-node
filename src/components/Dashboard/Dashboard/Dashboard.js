@@ -26,7 +26,7 @@ const Dashboard = () => {
     fetch("https://camspice-server.vercel.app/orders")
       .then((res) => res.json())
       .then((data) => {
-        const myOrders = data.filter((order) => order.email == user?.email);
+        const myOrders = data.filter((order) => order.email === user?.email);
 
         setOrders(myOrders);
       });
