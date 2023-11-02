@@ -17,7 +17,7 @@ const Order = () => {
 
 
     useEffect(() => {
-        fetch(`https://mysterious-refuge-82973.herokuapp.com/products/${productId}`)
+        fetch(`https://camspice-server.vercel.app/products/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -33,7 +33,7 @@ const Order = () => {
         data.img = product?.img;
         data.status = "Pending";
 
-        fetch('https://mysterious-refuge-82973.herokuapp.com/orders', {
+        fetch('https://camspice-server.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

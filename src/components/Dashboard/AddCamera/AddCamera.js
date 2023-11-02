@@ -8,7 +8,7 @@ const AddCamera = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('https://mysterious-refuge-82973.herokuapp.com/products', data)
+        axios.post('https://camspice-server.vercel.app/products', data)
             .then(res => {
                 // console.log(res);
                 if (res.data.insertedId) {

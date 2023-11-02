@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
 
 
     useEffect(() => {
-        fetch('https://mysterious-refuge-82973.herokuapp.com/orders')
+        fetch('https://camspice-server.vercel.app/orders')
             .then(res => res.json())
             .then(data => {
                 // const myOrders = data.filter(order => order.email == user?.email)
@@ -23,7 +23,7 @@ const ManageAllOrders = () => {
         const proceed = window.confirm("Are you sure you want to delete")
 
         if (proceed) {
-            const url = `https://mysterious-refuge-82973.herokuapp.com/orders/${id}`
+            const url = `https://camspice-server.vercel.app/orders/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -41,7 +41,7 @@ const ManageAllOrders = () => {
     };
 
     const handleStatus = id => {
-        const url = `https://mysterious-refuge-82973.herokuapp.com/orders/${id}`;
+        const url = `https://camspice-server.vercel.app/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

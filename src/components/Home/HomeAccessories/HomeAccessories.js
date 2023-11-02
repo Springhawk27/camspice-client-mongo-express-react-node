@@ -1,40 +1,32 @@
-import React from 'react';
-import useAccessories from '../../../hooks/useAccessories';
-import Accessory from '../Accessory/Accessory';
+import React from "react";
+import useAccessories from "../../../hooks/useAccessories";
+import Accessory from "../Accessory/Accessory";
 
 const HomeAccessories = (props) => {
-    const [accessories] = useAccessories([]);
+  const [accessories] = useAccessories([]);
 
-    return (
-
-        <div >
-            <section className="text-gray-600 body-font">
-                <div className="container px-5 pt-8 mx-auto">
-                    <div className="flex flex-col text-center w-full mb-1">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-1 text-blue-500 bg-blue-50 p-2">Get all the available Accessories for your Action Camera</h1>
-                    </div>
-                </div>
-            </section>
-            <section className="text-gray-600 body-font">
-                <div className="container px-5 py-8 mx-auto">
-                    <div className="flex flex-wrap -m-4">
-                        {
-                            accessories.map(accessory => <Accessory
-                                key={accessory._id}
-                                accessory={accessory}
-                            ></Accessory>)
-                        }
-                    </div>
-                </div>
-            </section>
+  return (
+    <div>
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 pt-8 mx-auto">
+          <div className="flex flex-col text-center w-full mb-1">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-1 text-blue-500 bg-blue-50 p-2">
+              Get all the available Accessories for your Action Camera
+            </h1>
+          </div>
         </div>
-
-    );
+      </section>
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-8 mx-auto">
+          <div className="flex flex-wrap -m-4">
+            {accessories?.map((accessory) => (
+              <Accessory key={accessory._id} accessory={accessory}></Accessory>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default HomeAccessories;
-
-
-
-
-

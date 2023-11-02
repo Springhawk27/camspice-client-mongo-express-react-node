@@ -8,7 +8,7 @@ const Review = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('https://mysterious-refuge-82973.herokuapp.com/reviews', data)
+        axios.post('https://camspice-server.vercel.app/reviews', data)
             .then(res => {
                 // console.log(res);
                 if (res.data.insertedId) {

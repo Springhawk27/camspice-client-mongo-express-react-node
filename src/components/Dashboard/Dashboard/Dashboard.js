@@ -36,7 +36,7 @@ const Dashboard = () => {
 
 
     useEffect(() => {
-        fetch('https://mysterious-refuge-82973.herokuapp.com/orders')
+        fetch('https://camspice-server.vercel.app/orders')
             .then(res => res.json())
             .then(data => {
                 const myOrders = data.filter(order => order.email == user?.email)
@@ -46,7 +46,7 @@ const Dashboard = () => {
     }, [orders, user.email])
 
     useEffect(() => {
-        fetch('https://mysterious-refuge-82973.herokuapp.com/orders')
+        fetch('https://camspice-server.vercel.app/orders')
             .then(res => res.json())
             .then(data => {
 

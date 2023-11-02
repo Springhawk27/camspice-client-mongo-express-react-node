@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://mysterious-refuge-82973.herokuapp.com/users/admin', {
+        fetch('https://camspice-server.vercel.app/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

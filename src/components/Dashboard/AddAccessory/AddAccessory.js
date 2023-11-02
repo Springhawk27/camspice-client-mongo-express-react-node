@@ -8,7 +8,7 @@ const AddAccessory = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('https://mysterious-refuge-82973.herokuapp.com/accessories', data)
+        axios.post('https://camspice-server.vercel.app/accessories', data)
             .then(res => {
                 // console.log(res);
                 if (res.data.insertedId) {

@@ -1,18 +1,17 @@
 import { useEffect } from "react";
-import { useState } from "react"
+import { useState } from "react";
 
-
-// useSpots hook 
+// useSpots hook
 const useCameras = () => {
-    const [cameras, setCameras] = useState([]);
-    useEffect(() => {
-        // fetch('https://scary-demon-31223.herokuapp.com/picnicSpots')
-        fetch('https://mysterious-refuge-82973.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => setCameras(data))
-    }, [])
+  const [cameras, setCameras] = useState([]);
+  useEffect(() => {
+    // fetch('https://scary-demon-31223.herokuapp.com/picnicSpots')
+    fetch("https://camspice-server.vercel.app/products")
+      .then((res) => res.json())
+      .then((data) => setCameras(data));
+  }, [cameras]);
 
-    return [cameras, setCameras];
-}
+  return [cameras, setCameras];
+};
 
 export default useCameras;

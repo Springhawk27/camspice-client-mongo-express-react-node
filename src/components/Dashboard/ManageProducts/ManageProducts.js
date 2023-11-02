@@ -4,7 +4,7 @@ const ManageProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://mysterious-refuge-82973.herokuapp.com/products')
+        fetch('https://camspice-server.vercel.app/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -13,7 +13,7 @@ const ManageProducts = () => {
         const proceed = window.confirm("Are you sure you want to delete")
 
         if (proceed) {
-            const url = `https://mysterious-refuge-82973.herokuapp.com/products/${id}`
+            const url = `https://camspice-server.vercel.app/products/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
