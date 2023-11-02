@@ -17,7 +17,7 @@ const Camera = (props) => {
         <h2 className="text-gray-900 title-font text-lg font-medium">{name}</h2>
         <p className="mt-1 text-red-500">{price} Taka</p>
         <NavLink to={`/orders/${_id}`} className="flex justify-start mt-2">
-          <button className="inline-flex text-white bg-blue-400 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
+          <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">
             Buy Now
           </button>
         </NavLink>

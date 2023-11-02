@@ -8,12 +8,13 @@ const FeaturedCameras = () => {
 
   return (
     <div>
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 pt-12 mx-auto">
+      <section className="text-gray-600 body-font ">
+        <div className="container px-5 pt-12 mx-auto ">
           <div className="flex flex-col text-center w-full mb-1 ">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-1 text-blue-500 bg-blue-50 p-2">
-              Check out our featured Action Camera
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-1 text-blue-500 bg-blue-50 p-4 ">
+              Discover our highlighted action camera
             </h1>
+            <hr className="border-b-2 border-blue-500 w-full mx-auto " />
           </div>
         </div>
       </section>
