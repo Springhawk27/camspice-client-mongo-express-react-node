@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-            <div className="lg:w-2/3 md:w-1/3 w-full px-4">
+            <div className="lg:w-2/3 md:w-2/3 w-full px-4">
               <h2 className="title-font font-medium text-green-600 tracking-widest text-sm mb-3">
                 Contact Us
               </h2>
