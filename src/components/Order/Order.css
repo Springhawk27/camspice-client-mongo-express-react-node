@@ -1,33 +1,32 @@
-.booking-form{
-    margin:30px 150px;
+.booking-form {
+  margin: 30px 150px;
 }
 .booking-form input {
-    display: block;
-    margin-top: 30px;
-    padding: 5px;
-    border: 1px solid gray;
-    border-radius: 5px;
-    width: 300px;
+  display: block;
+  margin-top: 30px;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 300px;
 }
-.error{
-    color: red;
+.error {
+  color: red;
 }
 
 .order__form form {
-    display: flex;
-    flex-direction: column;
-    /* width: 40%; */
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* width: 40%; */
+  justify-content: center;
+  align-items: center;
 }
 
-
-.order__form form input,textarea {
-    width: 40%;
-    margin-bottom: 10px;
-    padding: 5px;
-    border: 1px solid green;
-    border-radius: 7px;
-    background-color: #E8FCF2;
+.order__form form input,
+textarea {
+  width: 40%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid rgb(108, 109, 108);
+  border-radius: 7px;
+  background-color: #ffffff;
 }
-
