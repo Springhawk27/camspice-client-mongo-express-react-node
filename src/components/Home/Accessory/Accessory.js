@@ -5,7 +5,7 @@ const Accessory = (props) => {
   const { name, model, brand, img } = props?.accessory;
 
   return (
-    <div className="lg:w-1/3 md:w-1/2 p-4 w-full hover:shadow-xl">
+    <div className="lg:w-1/3 md:w-1/2 p-4 w-full hover:shadow-xl shadow-md">
       <div className="block relative h-48 rounded overflow-hidden">
         <img
           alt="spot"
